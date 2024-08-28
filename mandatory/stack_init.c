@@ -6,7 +6,7 @@
 /*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:26:20 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/26 13:26:51 by cgama            ###   ########.fr       */
+/*   Updated: 2024/08/28 10:11:00 by cgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static long	ft_atol(const char	*str)
 	return (num * isneg);
 }
 
-void	stack_init(t_stack_node **a, char **argv, bool flag_arg_2)
+void	stack_init(t_stack_node **a, char **argv, bool flag_argc_2)
 {
 	long	nbr;
 	int		i;

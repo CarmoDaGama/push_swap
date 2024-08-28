@@ -6,7 +6,7 @@
 /*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 14:08:20 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/27 16:33:21 by cgama            ###   ########.fr       */
+/*   Updated: 2024/08/28 10:16:08 by cgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,24 @@ void	append_node(t_stack_node **stack, int nbr)
 	}
 }
 
-t_stack_node	*find_smalltest(t_stack_node *stack)
+t_stack_node	*find_smallest(t_stack_node *stack)
 {
-	long			smalltest;
-	t_stack_node	*smalltest_node;
+	long			smallest;
+	t_stack_node	*smallest_node;
 
 	if (stack == NULL)
 		return (NULL);
-	smalltest = LONG_MAX;
+	smallest = LONG_MAX;
 	while (stack)
 	{
-		if (stack->value < smalltest)
+		if (stack->value < smallest)
 		{
-			smalltest = stack->value;
-			smalltest_node = stack;
+			smallest = stack->value;
+			smallest_node = stack;
 		}
 		stack = stack->next;
 	}
-	return (smalltest);
+	return (smallest_node);
 }
 
 t_stack_node	*return_cheapest(t_stack_node *stack)

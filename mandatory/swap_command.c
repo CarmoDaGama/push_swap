@@ -6,7 +6,7 @@
 /*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:39:29 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/27 17:59:51 by cgama            ###   ########.fr       */
+/*   Updated: 2024/08/28 10:53:58 by cgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static	void	swap(t_stack_node **head)
 	(*head)->prev = NULL;
 }
 
-void	sa(t_stack_node **a, bool chacker)
+void	sa(t_stack_node **a, bool checker)
 {
 	swap(a);
 	if (!checker)
