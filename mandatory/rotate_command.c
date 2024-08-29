@@ -6,7 +6,7 @@
 /*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 12:51:07 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/28 13:08:06 by cgama            ###   ########.fr       */
+/*   Updated: 2024/08/29 17:34:24 by cgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ra(t_stack_node **a, bool checker)
 		write(1, "ra\n", 3);
 }
 
-void	rb(t_stack_node **a, bool checker)
+void	rb(t_stack_node **b, bool checker)
 {
 	rotate(b);
 	if (!checker)

@@ -6,7 +6,7 @@
 /*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 08:07:44 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/28 10:16:33 by cgama            ###   ########.fr       */
+/*   Updated: 2024/08/29 17:29:21 by cgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void			rb(t_stack_node **b, bool checker);
 void			rr(t_stack_node **a, t_stack_node **b, bool checker);
 void			rra(t_stack_node **a, bool checker);
 void			rrb(t_stack_node **b, bool checker);
-void			rrr(t_stack_node **a, t_stack_node b, bool checker);
-void			pa(t_stack_node **a, bool checker);
-void			pb(t_stack_node **b, bool checker);
+void			rrr(t_stack_node **a, t_stack_node **b, bool checker);
+void			pa(t_stack_node **a, t_stack_node **b, bool checker);
+void			pb(t_stack_node **b, t_stack_node **a, bool checker);
 
 #endif

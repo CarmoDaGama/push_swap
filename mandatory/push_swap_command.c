@@ -6,7 +6,7 @@
 /*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 14:53:02 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/28 15:44:20 by cgama            ###   ########.fr       */
+/*   Updated: 2024/08/29 17:31:36 by cgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	rotate_both(t_stack_node **a,
 }
 
 static void	reverse_rotate_both(t_stack_node **a,
-								t_stack_node **b
+								t_stack_node **b,
 								t_stack_node *cheapest_node)
 {
 	while (*a != cheapest_node->target_node
@@ -64,10 +64,10 @@ static void	move_nodes(t_stack_node **a, t_stack_node **b)
 	cheapest_node = return_cheapest(*b);
 	if (cheapest_node->above_median
 		&& cheapest_node->target_node->above_median)
-		rotete_both(a, b, cheapest_node);
+		rotate_both(a, b, cheapest_node);
 	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target_node->above_median))
-		reverse_rotation_both(a, a, cheapest_node);
+		reverse_rotate_both(a, a, cheapest_node);
 	finish_rotation(b, cheapest_node, 'b');
 	finish_rotation(a, cheapest_node, 'a');
 	pa(a, b, false);
@@ -86,7 +86,7 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 		while (len_a-- > 3)
 			pb(b, a, false);
 	}
-	tint_sort(a);
+	tiny_sort(a);
 	while (*b)
 	{
 		init_nodes(*a, *b);

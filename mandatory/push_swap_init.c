@@ -6,7 +6,7 @@
 /*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 13:25:24 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/28 14:50:49 by cgama            ###   ########.fr       */
+/*   Updated: 2024/08/29 17:33:16 by cgama            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	set_target_node(t_stack_node *a,
 	while (b)
 	{
 		best_match_index = LONG_MAX;
-		currnt_a = a;
+		current_a = a;
 		while (current_a)
 		{
 			if (current_a->value > b->value
@@ -105,7 +105,7 @@ void	set_cheapest(t_stack_node *b)
 void	init_nodes(t_stack_node *a, t_stack_node *b)
 {
 	set_current_position(a);
-	set_current_postion(b);
+	set_current_position(b);
 	set_target_node(a, b);
 	set_price(a, b);
 	set_cheapest(b);
