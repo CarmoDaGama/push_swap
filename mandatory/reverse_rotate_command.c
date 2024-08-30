@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   reverse_rotate_command.c                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 13:11:21 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/28 13:24:33 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 static void	reverse_rotate(t_stack_node **stack)
@@ -18,7 +6,7 @@ static void	reverse_rotate(t_stack_node **stack)
 	int				len;
 
 	len = stack_len(*stack);
-	if (*stack == NULL || stack == NULL || len == 1)
+	if (NULL == *stack || NULL == stack || 1 == len)
 		return ;
 	last = find_last_node(*stack);
 	last->prev->next = NULL;

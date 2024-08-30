@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap_command.c                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 14:53:02 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/29 17:31:36 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 static void	rotate_both(t_stack_node **a,
@@ -53,7 +41,7 @@ void	finish_rotation(t_stack_node **stack,
 				rb(stack, false);
 			else
 				rrb(stack, false);
-		}
+		}	
 	}
 }
 
@@ -67,9 +55,9 @@ static void	move_nodes(t_stack_node **a, t_stack_node **b)
 		rotate_both(a, b, cheapest_node);
 	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target_node->above_median))
-		reverse_rotate_both(a, a, cheapest_node);
+		reverse_rotate_both(a, b, cheapest_node);
 	finish_rotation(b, cheapest_node, 'b');
-	finish_rotation(a, cheapest_node, 'a');
+	finish_rotation(a, cheapest_node->target_node, 'a');
 	pa(a, b, false);
 }
 

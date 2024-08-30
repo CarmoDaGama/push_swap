@@ -1,21 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   stack_init.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 13:26:20 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/28 10:11:00 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
-#include <limits.h>
-#include <stdlib.h>
-#include <stdio.h>
 
-static long	ft_atol(const char	*str)
+static long	ft_atol(const char *str)
 {
 	long	num;
 	int		isneg;
@@ -32,12 +17,12 @@ static long	ft_atol(const char	*str)
 		i++;
 	else if (str[i] == '-')
 	{
-		isneg = -isneg;
+		isneg *= -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		num = (num * 10) + (str[i] - 48);
+		num = (num * 10) + (str[i] - '0');
 		i++;
 	}
 	return (num * isneg);

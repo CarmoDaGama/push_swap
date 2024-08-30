@@ -1,25 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   error_free.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 16:31:51 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/27 17:08:50 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 void	free_matrix(char **argv)
 {
 	int	i;
 
 	i = -1;
-	if (argv == NULL || *argv == NULL)
+	if (NULL == argv || NULL == *argv)
 		return ;
 	while (argv[i])
 		free(argv[i++]);
@@ -31,7 +17,7 @@ void	free_stack(t_stack_node **stack)
 	t_stack_node	*tmp;
 	t_stack_node	*current;
 
-	if (stack == NULL)
+	if (NULL == stack)
 		return ;
 	current = *stack;
 	while (current)
@@ -72,7 +58,7 @@ int	error_syntax(char *str_nbr)
 
 int	error_repetition(t_stack_node *a, int nbr)
 {
-	if (a == NULL)
+	if (NULL == a)
 		return (0);
 	while (a)
 	{

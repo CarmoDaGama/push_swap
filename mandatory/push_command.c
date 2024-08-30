@@ -1,29 +1,17 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_command.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 15:33:59 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/29 17:18:00 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 static void	push(t_stack_node **dest, t_stack_node **src)
 {
 	t_stack_node	*node_to_push;
 
-	if (*src == NULL)
+	if (NULL == *src)
 		return ;
 	node_to_push = *src;
 	*src = (*src)->next;
 	if (*src)
 		(*src)->prev = NULL;
 	node_to_push->prev = NULL;
-	if (*dest == NULL)
+	if (NULL == *dest)
 	{
 		*dest = node_to_push;
 		node_to_push->next = NULL;
@@ -43,7 +31,7 @@ void	pa(t_stack_node **a, t_stack_node **b, bool checker)
 		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack_node **a, t_stack_node **b, bool checker)
+void	pb(t_stack_node **b, t_stack_node **a, bool checker)
 {
 	push(b, a);
 	if (!checker)

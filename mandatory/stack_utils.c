@@ -1,21 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 14:08:20 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/28 10:16:08 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
-#include <limits.h>
 
 t_stack_node	*find_last_node(t_stack_node *head)
 {
-	if (head == NULL)
+	if (NULL == head)
 		return (NULL);
 	while (head->next)
 		head = head->next;
@@ -27,14 +14,14 @@ void	append_node(t_stack_node **stack, int nbr)
 	t_stack_node	*node;
 	t_stack_node	*last_node;
 
-	if (stack == NULL)
+	if (NULL == stack)
 		return ;
 	node = malloc(sizeof(t_stack_node));
-	if (node == NULL)
+	if (NULL == node)
 		return ;
 	node->next = NULL;
 	node->value = nbr;
-	if (*stack == NULL)
+	if (NULL == *stack)
 	{
 		*stack = node;
 		node->prev = NULL;
@@ -52,7 +39,7 @@ t_stack_node	*find_smallest(t_stack_node *stack)
 	long			smallest;
 	t_stack_node	*smallest_node;
 
-	if (stack == NULL)
+	if (NULL == stack)
 		return (NULL);
 	smallest = LONG_MAX;
 	while (stack)
@@ -69,7 +56,7 @@ t_stack_node	*find_smallest(t_stack_node *stack)
 
 t_stack_node	*return_cheapest(t_stack_node *stack)
 {
-	if (stack == NULL)
+	if (NULL == stack)
 		return (NULL);
 	while (stack)
 	{
@@ -84,7 +71,7 @@ int	stack_len(t_stack_node *stack)
 {
 	int	count;
 
-	if (stack == NULL)
+	if (NULL == stack)
 		return (0);
 	count = 0;
 	while (stack)

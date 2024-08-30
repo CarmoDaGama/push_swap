@@ -1,17 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   split.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 11:17:34 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/28 12:50:37 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
-#include <stddef.h>
 
 static int	count_words(char *str, char separator)
 {
@@ -22,9 +9,9 @@ static int	count_words(char *str, char separator)
 	while (*str)
 	{
 		inside_word = false;
-		while (*str && *str == separator)
+		while (*str == separator && *str)
 			++str;
-		while (*str && *str != separator)
+		while (*str != separator && *str)
 		{
 			if (!inside_word)
 			{
@@ -48,10 +35,10 @@ static char	*get_next_word(char *str, char separator)
 	i = 0;
 	while (str[cursor] == separator)
 		++cursor;
-	while (str[cursor + len] && (str[cursor + len] != separator))
+	while ((str[cursor + len] != separator) && str[cursor + len])
 		++len;
 	next_str = malloc((size_t)len * sizeof(char) + 1);
-	if (next_str == NULL)
+	if (NULL == next_str)
 		return (NULL);
 	while ((str[cursor] != separator) && str[cursor])
 		next_str[i++] = str[cursor++];
@@ -70,14 +57,14 @@ char	**ft_split(char *str, char separator)
 	if (!words_number)
 		exit(1);
 	vector_strings = malloc(sizeof(char *) * (size_t)(words_number + 2));
-	if (vector_strings == NULL)
+	if (NULL == vector_strings)
 		return (NULL);
 	while (words_number-- >= 0)
 	{
-		if (i == 0)
+		if (0 == i)
 		{
 			vector_strings[i] = malloc(sizeof(char));
-			if (vector_strings[i] == NULL)
+			if (NULL == vector_strings[i])
 				return (NULL);
 			vector_strings[i++][0] = '\0';
 			continue ;

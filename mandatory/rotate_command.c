@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   rotate_command.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 12:51:07 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/29 17:34:24 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 static void	rotate(t_stack_node **stack)
@@ -18,14 +6,15 @@ static void	rotate(t_stack_node **stack)
 	int				len;
 
 	len = stack_len(*stack);
-	if (stack == NULL || *stack == NULL || len == 1)
+	if (NULL == stack || NULL == *stack || 1 == len)
 		return ;
 	last_node = find_last_node(*stack);
 	last_node->next = *stack;
+	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	last_node->next->prev = last_node;
 	last_node->next->next = NULL;
-}
+}	
 
 void	ra(t_stack_node **a, bool checker)
 {

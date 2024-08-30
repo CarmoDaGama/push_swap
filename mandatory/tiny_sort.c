@@ -1,23 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   tiny_sort.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 17:10:14 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/27 17:32:52 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
-#include <limits.h>
-#include <stdbool.h>
-#include <stdio.h>
 
 bool	stack_sorted(t_stack_node *stack)
 {
-	if (stack == NULL)
+	if (NULL == stack)
 		return (1);
 	while (stack->next)
 	{
@@ -33,7 +18,7 @@ static t_stack_node	*find_highest(t_stack_node *stack)
 	int				highest;
 	t_stack_node	*highest_node;
 
-	if (stack == NULL)
+	if (NULL == stack)
 		return (NULL);
 	highest = INT_MIN;
 	while (stack)

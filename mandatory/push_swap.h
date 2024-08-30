@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cgama <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 08:07:44 by cgama             #+#    #+#             */
-/*   Updated: 2024/08/29 17:29:21 by cgama            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -29,12 +17,12 @@ typedef struct s_stack_node
 	struct s_stack_node	*target_node;
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
-}				t_stack_node;
+}				t_stack_node;	
 
 char			**ft_split(char *str, char separator);
 
 void			free_matrix(char **argv);
-void			error_free(t_stack_node **a, char **argv, bool flag_arg_2);
+void			error_free(t_stack_node **a, char **argv, bool flag_argc_2);
 void			free_stack(t_stack_node **stack);
 int				error_repetition(t_stack_node *a, int nbr);
 int				error_syntax(char *str_nbr);
