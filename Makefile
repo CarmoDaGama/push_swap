@@ -11,14 +11,11 @@ OBJS = $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(ARCHIVE)
-	$(CC) $< -o $@
+	$(CC) $(ARCHIVE) -o $(NAME)
 
 $(ARCHIVE) : $(OBJS)
-	$(MAKE_LIB) $(ARCHIVE) $^
+	$(MAKE_LIB) $(ARCHIVE) $(OBJS)
 
-%.o : %.c 
-	$(CC) $(CFLAGS) -c $< -o $@ 
-	
 clean :
 	rm -f $(OBJS) $(ARCHIVE)
 
@@ -27,4 +24,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all clean fclea re
+.PHONY : all clean fclean re
